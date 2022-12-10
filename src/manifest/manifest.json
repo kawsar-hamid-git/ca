@@ -1,0 +1,78 @@
+{
+  "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.13/MicrosoftTeams.schema.json",
+  "manifestVersion": "1.13",
+  "id": "7eb621be-92c0-46ad-9b6d-dbecd8db3d51",
+  "version": "1.0.0",
+  "packageName": "Celebration Messaging Extension",
+  "developer": {
+    "name": "Kawsar Hamid",
+    "websiteUrl": "https://{{PUBLIC_HOSTNAME}}",
+    "privacyUrl": "https://{{PUBLIC_HOSTNAME}}/privacy.html",
+    "termsOfUseUrl": "https://{{PUBLIC_HOSTNAME}}/tou.html"
+  },
+  "name": {
+    "short": "Celebration Message",
+    "full": "Celebration Message"
+  },
+  "description": {
+    "short": "TODO: add short description here",
+    "full": "TODO: add full description here"
+  },
+  "icons": {
+    "outline": "icon-outline.png",
+    "color": "icon-color.png"
+  },
+  "accentColor": "#D85028",
+  "configurableTabs": [],
+  "staticTabs": [
+    {
+      "entityId": "TAB1",
+      "name": "Celebration",
+      "contentUrl": "https://ca78sxd1.azurewebsites.net",
+      "websiteUrl": "https://ca78sxd1.azurewebsites.net",
+      "scopes": [ "personal"]
+    }
+  ],
+  "bots": [],
+  "connectors": [],
+  "composeExtensions": [
+    {
+      "botId": "7eb621be-92c0-46ad-9b6d-dbecd8db3d51",
+      "canUpdateConfiguration": false,
+      "commands": [
+        {
+          "id": "planetExpanderAction",
+          "type": "action",
+          "title": "Planet Expander",
+          "description": "Lookup the details of a planet.",
+          "context": [
+            "compose",
+            "message"
+          ],
+          "fetchTask": true
+        }
+      ]
+    }
+  ],
+  "permissions": [
+    "identity",
+    "messageTeamMembers"
+  ],
+  "validDomains": [
+    "{{PUBLIC_HOSTNAME}}"
+  ],
+  "showLoadingIndicator": false,
+  "webApplicationInfo": {
+    "id": "7eb621be-92c0-46ad-9b6d-dbecd8db3d51",
+    "resource": "https://contosoapp.com"
+  },
+  "activities": {
+    "activityTypes": [
+      {
+        "type": "userMention",
+        "description": "Birthday Mention Activity",
+        "templateText": "{actor} added the {tabName} tab to the {teamName}'s | {channelName} channel"
+      }
+    ]
+  }
+}
